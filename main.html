@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dwayne Graham Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <h1>Dwayne Graham</h1>
+      <p class="hero-role">Web Developer</p>
+      <p class="subtitle">Resume & Contact Portal</p>
+    </header>
+
+    <main>
+      <section class="card login-card" id="loginCard">
+        <div class="login-card-badge" id="clickBadge">Page views: 0</div>
+        <h2>Login</h2>
+        <p>Enter any username and password to access my resume.</p>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Any Username" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Any Password" />
+
+          <button type="submit">Sign in</button>
+          <p class="message" id="loginMessage"></p>
+        </form>
+      </section>
+
+      <section class="card profile-card hidden" id="profileCard">
+        <h2>Welcome, <span id="displayName"></span></h2>
+        <p>My contact info is below.</p>
+
+        <div class="contact-grid">
+          <div>
+            <strong>Email</strong>
+            <p>gottscraham724@gmail.com</p>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p>325-262-6679</p>
+          </div>
+          <div>
+            <strong>Location</strong>
+            <p>San Angelo, TX</p>
+          </div>
+          <div>
+            <strong>LinkedIn</strong>
+            <p>linkedin.com/in/dwaynegraham</p>
+          </div>
+        </div>
+
+        <div class="resume-summary">
+          <h3>About</h3>
+          <p>Experienced professional focused on building strong user experiences, solving problems, and delivering results.</p>
+        </div>
+      </section>
+
+      <button class="secondary-button hidden" id="logoutButton">Logout</button>
+    </main>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginCard = document.getElementById('loginCard');
+    const profileCard = document.getElementById('profileCard');
+    const displayName = document.getElementById('displayName');
+    const loginMessage = document.getElementById('loginMessage');
+    const logoutButton = document.getElementById('logoutButton');
+
+    function showProfile(userName) {
+      displayName.textContent = userName;
+      loginCard.classList.add('hidden');
+      profileCard.classList.remove('hidden');
+      logoutButton.classList.remove('hidden');
+      loginMessage.textContent = '';
+    }
+
+    function showLogin() {
+      loginCard.classList.remove('hidden');
+      profileCard.classList.add('hidden');
+      logoutButton.classList.add('hidden');
+      loginForm.reset();
+      loginMessage.textContent = '';
+    }
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!username || !password) {
+        loginMessage.textContent = 'Please enter a username and password.';
+        return;
+      }
+
+      showProfile(username);
+    });
+
+    logoutButton.addEventListener('click', () => {
+      showLogin();
+    });
+
+    const clickBadge = document.getElementById('clickBadge');
+    let viewCount = Number(localStorage.getItem('viewCount') || 0);
+    viewCount += 1;
+    localStorage.setItem('viewCount', viewCount);
+    clickBadge.textContent = `Page views: ${viewCount}`;
+  </script>
+</body>
+</html>

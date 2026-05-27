@@ -1,0 +1,248 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #eef2f7;
+  color: #1a1f2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent overflowing text and allow words to break on small devices */
+html, body {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make headings and important text wrap instead of overflowing */
+h1, .hero h1, .subtitle, .card h2, label, .contact-grid p, .contact-grid strong {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7fafc 0%, #dfe7ef 100%);
+}
+
+.page-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero {
+  text-align: center;
+  padding: 32px 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4vw, 4.4rem);
+  letter-spacing: -0.04em;
+}
+
+.hero-role {
+  margin: 12px auto 0;
+  font-size: clamp(1.4rem, 2vw, 2.2rem);
+  color: #334155;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 8px auto 0;
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+main {
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(25, 35, 60, 0.1);
+  padding: 28px;
+  position: relative;
+  min-width: 0; /* allow children to shrink inside grid/flex containers */
+}
+
+.login-card-badge {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.login-card h2,
+.profile-card h2,
+.resume-summary h3 {
+  margin-top: 0;
+  color: #101828;
+}
+
+.login-card p,
+.profile-card p {
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d2d6dc;
+  border-radius: 16px;
+  font-size: 1rem;
+  min-width: 0; /* prevents inputs from forcing overflow in narrow containers */
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: normal; /* allow button labels to wrap if needed */
+  transition: all 600ms ease;
+}
+
+button[type="submit"],
+.secondary-button {
+  background: #1d4ed8;
+  color: #ffffff;
+  margin-top: 22px;
+  width: 100%;
+}
+
+.secondary-button {
+  background: #eef2ff;
+  color: #1d4ed8;
+}
+
+button:hover,
+button[type="submit"]:hover,
+.secondary-button:hover {
+  opacity: 1;
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.message {
+  margin-top: 14px;
+  color: #d92d20;
+  min-height: 1.2em;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
+}
+
+.contact-grid div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  min-width: 0; /* allow grid item content to wrap instead of overflow */
+}
+
+.contact-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 0.85rem;
+}
+
+.contact-grid p {
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.resume-summary {
+  margin-top: 24px;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 18px;
+  }
+
+  .hero {
+    padding: 24px 16px;
+  }
+  /* Slightly reduce paddings and font sizes on very small screens */
+  input {
+    padding: 12px 12px;
+  }
+
+  button[type="submit"],
+  .secondary-button {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .contact-grid {
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contact-grid div {
+    padding: 14px 10px;
+  }
+
+  .contact-grid strong {
+    font-size: 0.75rem;
+  }
+
+  .contact-grid p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+  .login-card-badge {
+    right: 14px;
+    top: 14px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
