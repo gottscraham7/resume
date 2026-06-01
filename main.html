@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dwayne Graham Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <h1>Dwayne Graham</h1>
+      <p class="hero-role">Web Developer</p>
+      <p class="hero-link"><a href="https://github.com/orgs/gottscraham7/repositories" target="_blank" rel="noreferrer">GitHub Repositories</a></p>
+      <p class="subtitle">Resume & Contact Portal</p>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <span class="material-icons icon" aria-hidden="true">wb_sunny</span>
+        <span class="sr-only">Toggle theme</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="card login-card" id="loginCard">
+        <div class="login-card-badge" id="clickBadge">Page views: 0</div>
+        <h2>Login</h2>
+        <p>Enter any username and password to access my resume.</p>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Any Username" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Any Password" />
+
+          <button type="submit">Sign in</button>
+          <p class="message" id="loginMessage"></p>
+        </form>
+      </section>
+
+      <section class="card profile-card hidden" id="profileCard">
+        <h2>Welcome, <span id="displayName"></span></h2>
+        <p>My contact info is below.</p>
+
+        <div class="contact-grid">
+          <div>
+            <strong>Email</strong>
+            <p>gottscraham724@gmail.com</p>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p>325-262-6679</p>
+          </div>
+          <div>
+            <strong>Location</strong>
+            <p>San Angelo, TX</p>
+          </div>
+          <div>
+            <strong>LinkedIn</strong>
+            <p>linkedin.com/in/dwaynegraham</p>
+          </div>
+        </div>
+
+        <div class="resume-summary">
+          <h3>About</h3>
+          <p>Experienced professional focused on building strong user experiences, solving problems, and delivering results.</p>
+        </div>
+      </section>
+
+      <button class="secondary-button hidden" id="logoutButton">Logout</button>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
