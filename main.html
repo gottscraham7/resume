@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dwayne Graham Resume</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <h1>Dwayne Graham</h1>
+      <p class="hero-role">Web Developer</p>
+      <p class="hero-link"><a href="https://github.com/orgs/gottscraham7/repositories" target="_blank" rel="noreferrer">GitHub Repositories</a></p>
+      <p class="subtitle">Resume & Contact Portal</p>
+      <nav class="page-nav hidden" aria-label="Page sections">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+          <span class="material-icons">menu</span>
+        </button>
+        <ul class="nav-links" id="navMenu">
+          <li><a href="#loginCard">Login</a></li>
+          <li><a href="#profileCard">Contact</a></li>
+          <li><a href="#aboutSection">About</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <span class="material-icons icon" aria-hidden="true">wb_sunny</span>
+        <span class="sr-only">Toggle theme</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="card login-card" id="loginCard">
+        <div class="login-card-badge" id="clickBadge">Page views: 0</div>
+        <h2>Login</h2>
+        <p>Enter any username and password to access my resume.</p>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Any Username" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Any Password" />
+
+          <button type="submit">Sign in</button>
+          <p class="message" id="loginMessage"></p>
+        </form>
+      </section>
+
+      <section class="card profile-card hidden" id="profileCard">
+        <h2>Welcome, <span id="displayName"></span></h2>
+        <p>My contact info is below.</p>
+
+        <div class="contact-grid">
+          <div>
+            <strong>Email</strong>
+            <p>gottscraham724@gmail.com</p>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p>325-262-6679</p>
+          </div>
+          <div>
+            <strong>Location</strong>
+            <p>San Angelo, TX</p>
+          </div>
+          <div>
+            <strong>LinkedIn</strong>
+            <p><a href="https://www.linkedin.com/in/dwayne-graham-0a97b51a3" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/dwayne-graham-0a97b51a3</a></p>
+          </div>
+        </div>
+
+        <div class="resume-summary" id="aboutSection">
+          <h3>Full Resume</h3>
+          <div style="margin-top:18px;">
+            <iframe src="2026%20Resume%20PDF.pdf" title="Resume preview" loading="lazy" style="width:100%;min-height:720px;border:1px solid rgba(0,0,0,0.08);border-radius:16px;background:#fff;"></iframe>
+          </div>
+          <p style="margin-top: 18px; text-align: center;">
+            <a href="2026%20Resume%20PDF.pdf" class="secondary-button logout-like" target="_blank" rel="noopener noreferrer">Open My PDF Resume in a new tab</a>
+          </p>
+        </div>
+
+        <section class="card hidden" id="logoutSection">
+          <div style="text-align:center;">
+            <button class="secondary-button hidden icon-button" id="logoutButton" aria-label="Logout">
+              <span class="material-icons" aria-hidden="true">logout</span>
+              <span class="sr-only">Logout</span>
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
